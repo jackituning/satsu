@@ -7,9 +7,9 @@
   --sand: #D4A96A;
   --sand-light: #F0D9B5;
   --dusk: #8B2500;
-  --dark: #0D0804;
-  --mid: #1A0F06;
-  --surface: #231408;
+  --dark: #050208;
+  --mid: #0e0818;
+  --surface: #120a20;
   --border: rgba(255, 182, 39, 0.3);
   --glow: rgba(255, 182, 39, 0.15);
   --font-title: 'Cinzel Decorative', serif;
@@ -20,7 +20,10 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--dark);
+  background:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(80,20,140,0.2) 0%, transparent 60%),
+    linear-gradient(180deg, #050208 0%, #0e0818 30%, #1a0a2e 60%, #0a0510 100%);
+  background-attachment: fixed;
   color: var(--sand-light);
   font-family: var(--font-body);
   min-height: 100vh;
