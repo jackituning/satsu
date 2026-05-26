@@ -2,7 +2,6 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -26,19 +25,17 @@
   background-image:
     radial-gradient(1px 1px at 15% 20%, rgba(255,220,100,0.8) 0%, transparent 100%),
     radial-gradient(1px 1px at 30% 10%, rgba(255,255,255,0.6) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 50% 15%, rgba(255,200,80,0.7) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 50% 6%, rgba(255,200,80,0.7) 0%, transparent 100%),
     radial-gradient(1px 1px at 70% 8%, rgba(255,255,255,0.5) 0%, transparent 100%),
     radial-gradient(1px 1px at 85% 25%, rgba(255,220,100,0.6) 0%, transparent 100%),
     radial-gradient(1px 1px at 10% 45%, rgba(255,255,255,0.4) 0%, transparent 100%),
     radial-gradient(1.5px 1.5px at 90% 50%, rgba(255,200,80,0.5) 0%, transparent 100%),
-    radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
     radial-gradient(1px 1px at 25% 75%, rgba(255,255,255,0.25) 0%, transparent 100%),
     radial-gradient(1px 1px at 75% 80%, rgba(255,200,80,0.3) 0%, transparent 100%),
     radial-gradient(1px 1px at 55% 5%, rgba(255,255,255,0.5) 0%, transparent 100%),
     radial-gradient(1px 1px at 20% 55%, rgba(200,180,255,0.3) 0%, transparent 100%),
     radial-gradient(1px 1px at 80% 35%, rgba(255,220,180,0.35) 0%, transparent 100%);
   animation: starsTwinkle 5s ease-in-out infinite alternate;
-  z-index: 0;
 }
 
 @keyframes starsTwinkle {
@@ -46,17 +43,24 @@
   100% { opacity: 1; }
 }
 
+.header-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
 .sun-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -70%);
+  position: relative;
   width: 100px;
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  margin-bottom: 2rem;
 }
 
 .sun-rays {
@@ -102,23 +106,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow:
-    0 0 30px rgba(255,182,39,0.8),
-    0 0 60px rgba(255,182,39,0.4),
-    0 0 120px rgba(255,107,43,0.2);
+  box-shadow: 0 0 30px rgba(255,182,39,0.8), 0 0 60px rgba(255,182,39,0.4), 0 0 120px rgba(255,107,43,0.2);
   animation: sunPulse 4s ease-in-out infinite;
   z-index: 2;
 }
 
 .sun-symbol {
   font-size: 2.5rem;
-  line-height: 1;
   filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
   animation: sunSpin 20s linear infinite;
 }
 
 @keyframes sunSpin { to { transform: rotate(360deg); } }
-
 @keyframes sunPulse {
   0%, 100% { box-shadow: 0 0 30px rgba(255,182,39,0.8), 0 0 60px rgba(255,182,39,0.4), 0 0 120px rgba(255,107,43,0.2); }
   50% { box-shadow: 0 0 50px rgba(255,182,39,1), 0 0 100px rgba(255,182,39,0.6), 0 0 180px rgba(255,107,43,0.3); }
@@ -135,13 +134,6 @@
 @keyframes haloExpand {
   0% { transform: scale(1); opacity: 0.6; }
   100% { transform: scale(1.8); opacity: 0; }
-}
-
-.header-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  margin-top: 140px;
 }
 
 .header-eyebrow {
@@ -162,10 +154,7 @@
   color: var(--sun);
   letter-spacing: 0.12em;
   line-height: 1;
-  text-shadow:
-    0 0 20px rgba(255,182,39,0.7),
-    0 0 60px rgba(255,182,39,0.3),
-    0 4px 20px rgba(0,0,0,0.8);
+  text-shadow: 0 0 20px rgba(255,182,39,0.7), 0 0 60px rgba(255,182,39,0.3), 0 4px 20px rgba(0,0,0,0.8);
   animation: titleGlow 4s ease-in-out infinite;
 }
 
@@ -196,17 +185,13 @@
   background: linear-gradient(to right, transparent, var(--sun), transparent);
 }
 
-.divider-glyph {
-  color: var(--sun);
-  font-size: 1rem;
-}
+.divider-glyph { color: var(--sun); font-size: 1rem; }
 
 .header-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
   justify-content: center;
-  margin-top: 1rem;
 }
 
 .nav-link {
